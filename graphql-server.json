@@ -1,0 +1,38 @@
+{
+  "tasks": [
+    {
+      "id": "131",
+      "title": "Task 4",
+      "description": "Description for Task 4",
+      "status": "DONE",
+      "order": 1
+    },
+    {
+      "id": "121",
+      "title": "Task 3",
+      "description": "Description for Task 3",
+      "status": "IN_PROGRESS",
+      "order": 1
+    },
+
+    {
+      "id": "111",
+      "title": "Task 1",
+      "description": "Description for Task 1",
+      "status": "TODO",
+      "order": 1
+    },
+    {
+      "id": "112",
+      "title": "Task 2",
+      "description": "Description for Task 2",
+      "status": "TODO",
+      "order": 2
+    }
+  ],
+  "columns": [
+    { "id": 1, "name": "TODO", "title": "To do" },
+    { "id": 2, "name": "IN_PROGRESS", "title": "In progress" },
+    { "id": 3, "name": "DONE", "title": "Done" }
+  ]
+}
