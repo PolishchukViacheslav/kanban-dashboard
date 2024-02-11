@@ -1,7 +1,7 @@
 import { gql, useQuery } from '@apollo/client';
 
 const GET_ALL_COLUMNS = gql`
-  query getAllColuns($perPage: Int!) {
+  query GetAllColumns($perPage: Int!) {
     allColumns(perPage: $perPage) {
       ...ColumnDetailsFragment
     }
