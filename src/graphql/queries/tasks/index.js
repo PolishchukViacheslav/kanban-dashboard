@@ -1,3 +1,4 @@
+import { TaskFragment } from '@/graphql/fragments/Task';
 import { gql, useMutation, useQuery } from '@apollo/client';
 
 const GET_ALL_TASKS = gql`
@@ -30,16 +31,26 @@ const CREATE_TASK = gql`
     }
   }
 `;
-const useCreateTaskMutation = () => {
+
+const updateCache =
+  (status) =>
+  (cache, { data }) => {
+    const existingTasks = cache.readQuery({
+      query: GET_ALL_TASKS,
+      variables: { filter: { status } },
+    });
+
+    const newTask = data.createTask;
+
+    cache.writeQuery({
+      query: GET_ALL_TASKS,
+      variables: { filter: { status } },
+      data: { allTasks: [...existingTasks?.allTasks, newTask] },
+    });
+  };
+const useCreateTaskMutation = (status) => {
   return useMutation(CREATE_TASK, {
-    refetchQueries: ({ data }) => {
-      return [
-        {
-          query: GET_ALL_TASKS,
-          variables: { filter: { status: data?.createTask?.status } },
-        },
-      ];
-    },
+    update: updateCache(status),
   });
 };
 

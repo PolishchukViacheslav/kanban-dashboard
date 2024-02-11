@@ -25,11 +25,9 @@ const TaskModal = () => {
     description || '',
     500,
   );
-  const [createTask, { data, error, loading, reset }] = useCreateTaskMutation();
-  const [
-    updateTask,
-    { data: updateData, error: updateError, loading: updateLoading },
-  ] = useUpdateTaskMutation();
+  const [createTask, { data, error, loading, reset }] =
+    useCreateTaskMutation(status);
+  const [updateTask] = useUpdateTaskMutation();
 
   const isDisabledCreateBtn =
     loading || !(titleValue.trim() && descriptionValue.trim());
