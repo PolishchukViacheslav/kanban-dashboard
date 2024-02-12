@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "start-server": "json-graphql-server graphql-server.json --p 5000 &",
+    "start-server": "json-graphql-server graphql-server.json --p 3001 &",
     "start": "npm run start-server && npm run dev"
   },
   "dependencies": {
