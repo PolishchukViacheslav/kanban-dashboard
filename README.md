@@ -2,3 +2,7 @@
 
 This app is a simple kanban board built with React, Vite, and GraphQL.
 With drag and drop functionality, it can be used for any type of kanban board.
+
+# Start app locally
+
+docker-compose up
